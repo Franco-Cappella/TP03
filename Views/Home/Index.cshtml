@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<link rel="stylesheet" href="~/css/css.css">
+
+<header>
+    <h1>CATALOGO</h1>
+</header>
+<body>
+        
+        @foreach (string key in ViewBag.Discos.Keys)
+        {
+            <img src="imagenes/@ViewBag.Discos[key].foto">
+            <h2>@key</h2>
+            <ul>
+                <li>Artista: @ViewBag.Discos[key].artista</li>
+                <li>Productor: @ViewBag.Discos[key].productor</li>
+                <li>Genero musical: @ViewBag.Discos[key].genero</li>
+                <a href= '@Url.Action("MostrarDatosAlbum", "Home", new {nomAlbum = key})'> VER TEMAS</a>
+            </ul>
+        }
+
+</body>

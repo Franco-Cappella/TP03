@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="~/css/css.css">
+<img src="/imagenes/@ViewBag.Disco.foto">
+<h1>Canciones</h1>
+<ul >
+    @foreach (string tema in @ViewBag.Disco.listTemas)
+    {
+        <li>@tema</li>
+    }
+
+</ul>
